@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Narrentiefjes - vrolijke protestliedjes</title>
+<meta name="description" content="Deze website presenteert het muzikale duo De Narrentiefjes en biedt fans en boekers naadloze toegang tot muziek, media en boekingsinformatie.">
+<link rel="icon" href="https://placehold.co/64x64/2e6b6b/eaf4f4?text=DN">
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+
+:root {
+  --lettertype-body: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --lettertype-kop: "Dancing Script", "Segoe Script", cursive;
+  --kleur-achtergrond: #eaf4f4;
+  --kleur-tekst: #1a2e2e;
+  --kleur-kaart: #f4fafa;
+  --kleur-primair: #2e6b6b;
+  --kleur-primair-tekst: #eaf4f4;
+  --kleur-secundair: #c8e6e6;
+  --kleur-secundair-tekst: #1a2e2e;
+  --kleur-muted: #b2d8d8;
+  --kleur-muted-tekst: #2e6b6b;
+  --kleur-accent: #7fb5b5;
+  --kleur-accent-tekst: #1a2e2e;
+  --kleur-destructive: #b84a3c;
+  --kleur-border: rgba(26, 46, 46, 0.15);
+  --kleur-input-achtergrond: #d8eeee;
+  --kleur-ring: #2e6b6b;
+  --radius: 0.625rem;
+  --radius-md: 0.5rem;
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+  --shadow-kaart: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-hero: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --container-breedte: 80rem;
+}
+
+.pagina {
+  background-color: var(--kleur-achtergrond);
+  color: var(--kleur-tekst);
+  font-family: var(--lettertype-body);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.container,
+.site-header,
+.header-inhoud,
+.navigatie-lijst,
+.sectie,
+.hero-sectie,
+.hero-grid,
+.hero-inhoud,
+.hero-titelblok,
+.hero-acties,
+.hero-foto,
+.hero-foto-overlay,
+.sectie-kop,
+.over-tekst,
+.persoon-grid,
+.kaart,
+.kaart-foto,
+.kaart-inhoud,
+.video-grid,
+.video-kaart,
+.video-thumb,
+.video-play,
+.nieuws-grid,
+.lied-lijst,
+.lied-kaart,
+.galerij-grid,
+.galerij-item,
+.winkel-grid,
+.kalender-lijst,
+.event-kaart,
+.event-datum,
+.contactgegevens,
+.form-kaart,
+.contact-formulier,
+.veld,
+.veld-grid-2,
+.veld-input,
+.veld-select,
+.veld-textarea,
+.knop,
+.navigatie-knop,
+.social-lijst,
+.social-link,
+.footer-inhoud {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-breedte);
+  margin-inline: auto;
+}
+
+.hoofd-inhoud {
+  flex: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: color-mix(in srgb, var(--kleur-achtergrond) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--kleur-border);
+}
+
+.header-inhoud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 4.5rem;
+  padding-inline: 1rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--kleur-primair);
+}
+
+.logo-afbeelding {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--kleur-primair);
+  display: block;
+}
+
+.logo-tekst {
+  font-family: var(--lettertype-kop);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.navigatie-lijst {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigatie-link {
+  color: var(--kleur-tekst);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.15s ease;
+}
+
+.navigatie-link:hover {
+  color: var(--kleur-primair);
+}
+
+.navigatie-knop {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: 2px solid var(--kleur-primair);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.65rem;
+  cursor: pointer;
+}
+
+.navigatie-balk {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: var(--kleur-primair);
+}
+
+.sectie {
+  padding: 5rem 1rem;
+  scroll-margin-top: 7rem;
+}
+
+.sectie-alternatief {
+  background-color: color-mix(in srgb, var(--kleur-secundair) 30%, transparent);
+}
+
+.sectie-kop {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectie-titel {
+  display: inline-block;
+  font-family: var(--lettertype-kop);
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--kleur-primair);
+  border-bottom: 4px solid var(--kleur-primair);
+  padding-bottom: 0.5rem;
+  margin: 0 0 2rem;
+}
+
+.sectie-subtitel {
+  font-size: 1.125rem;
+  color: var(--kleur-muted-tekst);
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.625;
+}
+
+.hero-sectie {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 1rem;
+  scroll-margin-top: 7rem;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-inhoud {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-titelblok {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--kleur-primair);
+  margin: 0;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kleur-muted-tekst);
+  margin: 0.25rem 0 0;
+}
+
+.hero-tekst {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  margin: 0;
+}
+
+.hero-acties {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.knop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--lettertype-body);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.knop-primair {
+  background-color: var(--kleur-primair);
+  color: var(--kleur-primair-tekst);
+  border-color: var(--kleur-primair);
+  padding-inline: 1.5rem;
+  height: 3.5rem;
+  font-size: 1.125rem;
+}
+
+.knop-primair:hover {
+  background-color: color-mix(in srgb, var(--kleur-primair) 90%, transparent);
+}
+
+.hero-foto-wrapper {
+  position: relative;
+}
+
+.hero-foto {
+  position: relative;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-hero);
+  border: 4px solid color-mix(in srgb, var(--kleur-primair) 20%, transparent);
+}
+
+.hero-afbeelding {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.hero-foto-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, color-mix(in srgb, var(--kleur-primair) 40%, transparent), transparent);
+  pointer-events: none;
+}
+
+.over-tekst {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  max-width: 48rem;
+  margin: 0 auto 4rem;
+  text-align: left;
+}
+
+.tekst-paragraaf {
+  margin: 0 0 1rem;
+  line-height: 1.625;
+}
+
+.over-citaat {
+  font-style: italic;
+}
+
+.over-lijst {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-weight: 600;
+}
+
+.lijst-item {
+  margin-bottom: 0.25rem;
+}
+
+.over-naam {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kleur-primair);
+}
+
+.over-handtekening {
+  color: var(--kleur-muted-tekst);
+}
+
+.persoon-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.kaart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--kleur-kaart);
+  color: var(--kleur-tekst);
+  border: 2px solid var(--kleur-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-kaart);
+  transition: border-color 0.3s ease;
+}
+
+.kaart:hover {
+  border-color: var(--kleur-primair);
+}
+
+.kaart-foto {
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--kleur-muted);
+}
+
+.kaart-afbeelding {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kaart-inhoud {
+  padding: 1.5rem;
+}
+
+.kaart-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  margin: 0 0 0.25rem;
+}
+
+.kaart-subtitel {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--kleur-muted-tekst);
+  border-left: 4px solid var(--kleur-accent);
+  padding-left: 0.75rem;
+  margin: 0 0 0.75rem;
+}
+
+.kaart-tekst {
+  line-height: 1.625;
+  margin: 0;
+}
+
+.lees-meer {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--kleur-primair);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.15s ease;
+}
+
+.lees-meer:hover {
+  color: color-mix(in srgb, var(--kleur-primair) 80%, transparent);
+}
+
+.video-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.video-kaart {
+  gap: 0;
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--kleur-muted);
+}
+
+.video-afbeelding {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.video-play::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20px solid #ffffff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  filter: drop-shadow(0 1px 3px rgb(0 0 0 / 0.5));
+}
+
+.video-duur {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: rgb(0 0 0 / 0.75);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.video-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  margin: 0;
+}
+
+.nieuws-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.blog-kaart {
+  padding: 1.5rem;
+  gap: 0.75rem;
+}
+
+.blog-meta {
+  color: var(--kleur-muted-tekst);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.blog-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  margin: 0;
+}
+
+.blog-tekst {
+  line-height: 1.625;
+  margin: 0;
+}
+
+.lied-lijst {
+  display: grid;
+  gap: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.lied-kaart {
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.lied-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  margin: 0;
+}
+
+.galerij-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.galerij-item {
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid var(--kleur-border);
+  transition: border-color 0.3s ease;
+}
+
+.galerij-item:hover {
+  border-color: var(--kleur-primair);
+}
+
+.galerij-afbeelding {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.winkel-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+.product-prijs {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kleur-primair);
+  margin: 0.25rem 0 0.75rem;
+}
+
+.product-beschrijving {
+  line-height: 1.625;
+  margin: 0;
+}
+
+.kalender-lijst {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.event-kaart {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  background-color: var(--kleur-kaart);
+  border: 2px solid var(--kleur-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-kaart);
+  transition: border-color 0.3s ease;
+}
+
+.event-kaart:hover {
+  border-color: var(--kleur-primair);
+}
+
+.event-datum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: var(--kleur-primair);
+  color: var(--kleur-primair-tekst);
+  text-align: center;
+}
+
+.event-maand {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.event-dag {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.event-weekdag {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.event-inhoud {
+  min-width: 0;
+}
+
+.event-titel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  margin: 0 0 0.25rem;
+}
+
+.event-tijd {
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.event-beschrijving {
+  color: var(--kleur-muted-tekst);
+  line-height: 1.625;
+  margin: 0;
+}
+
+.contactgegevens {
+  max-width: 42rem;
+  margin-inline: auto;
+}
+
+.contact-subtitel {
+  font-family: var(--lettertype-kop);
+  font-size: 1.875rem;
+  line-height: 1.3;
+  color: var(--kleur-primair);
+  border-left: 4px solid var(--kleur-primair);
+  padding-left: 1rem;
+  margin: 0 0 2rem;
+}
+
+.form-kaart {
+  background-color: var(--kleur-kaart);
+  border: 2px solid var(--kleur-primair);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-kaart);
+}
+
+.contact-formulier {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.veld {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.veld-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.verplicht {
+  color: var(--kleur-destructive);
+}
+
+.veld-input,
+.veld-select,
+.veld-textarea {
+  width: 100%;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  background-color: var(--kleur-input-achtergrond);
+  color: var(--kleur-tekst);
+  padding-inline: 0.75rem;
+  font-family: var(--lettertype-body);
+  font-size: 1rem;
+}
+
+.veld-select {
+  background-color: var(--kleur-achtergrond);
+}
+
+.veld-textarea {
+  height: auto;
+  min-height: 4rem;
+  padding-block: 0.5rem;
+  resize: none;
+}
+
+.veld-input:focus,
+.veld-select:focus,
+.veld-textarea:focus {
+  outline: none;
+  border-color: var(--kleur-ring);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--kleur-ring) 50%, transparent);
+}
+
+.veld-grid-2 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.knop-volledig {
+  width: 100%;
+  height: 3rem;
+  font-size: 0.875rem;
+}
+
+.site-footer {
+  background-color: color-mix(in srgb, var(--kleur-secundair) 30%, transparent);
+  padding: 0 1rem 4rem;
+}
+
+.footer-inhoud {
+  max-width: var(--container-breedte);
+  margin-inline: auto;
+  border-top: 2px solid var(--kleur-border);
+  padding-top: 3rem;
+  text-align: center;
+}
+
+.social-tekst {
+  font-size: 1.125rem;
+  margin: 0 0 1.5rem;
+}
+
+.social-lijst {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--kleur-primair);
+  border: 2px solid var(--kleur-primair);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.social-link:hover {
+  background-color: color-mix(in srgb, var(--kleur-primair) 10%, transparent);
+  color: color-mix(in srgb, var(--kleur-primair) 70%, transparent);
+}
+
+.social-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.copyright {
+  font-size: 0.875rem;
+  color: var(--kleur-muted-tekst);
+  margin: 0;
+}
+
+.knop:focus-visible,
+.navigatie-link:focus-visible,
+.navigatie-knop:focus-visible,
+.lees-meer:focus-visible,
+.social-link:focus-visible,
+.galerij-item:focus-visible,
+.video-thumb:focus-visible {
+  outline: 2px solid var(--kleur-ring);
+  outline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .sectie,
+  .hero-sectie {
+    padding-inline: 1.5rem;
+  }
+  .sectie-titel {
+    font-size: 3rem;
+  }
+  .hero-titel {
+    font-size: 2.25rem;
+  }
+  .hero-acties {
+    flex-direction: row;
+  }
+  .veld-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .social-lijst {
+    flex-direction: row;
+  }
+  .galerij-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .persoon-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sectie,
+  .hero-sectie {
+    padding-inline: 2rem;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-afbeelding {
+    height: 600px;
+  }
+  .persoon-grid {
+    gap: 3rem;
+  }
+  .galerij-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .navigatie-knop {
+    display: flex;
+  }
+  .navigatie-lijst {
+    display: none;
+  }
+  .navigatie-lijst.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background-color: var(--kleur-achtergrond);
+    border-bottom: 2px solid var(--kleur-border);
+    padding: 0.5rem 1rem 1rem;
+    box-shadow: var(--shadow-kaart);
+  }
+  .navigatie-lijst.open .navigatie-link {
+    display: block;
+    padding: 0.75rem 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .event-kaart {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .event-datum {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: baseline;
+    min-width: 0;
+  }
+  .logo-tekst {
+    font-size: 1.5rem;
+  }
+}
+</style>
+</head>
+<body class="pagina">
+
+<header class="site-header">
+  <div class="container header-inhoud">
+    <a class="logo" href="#home" aria-label="De Narrentiefjes - naar boven">
+      <img class="logo-afbeelding" src="https://placehold.co/96x96/2e6b6b/eaf4f4?text=DN" alt="Logo van De Narrentiefjes" width="40" height="40">
+      <span class="logo-tekst">De Narrentiefjes</span>
+    </a>
+    <nav class="navigatie" aria-label="Hoofdnavigatie">
+      <button class="navigatie-knop" type="button" aria-expanded="false" aria-controls="navigatie-lijst" aria-label="Menu openen of sluiten">
+        <span class="navigatie-balk"></span>
+        <span class="navigatie-balk"></span>
+        <span class="navigatie-balk"></span>
+      </button>
+      <ul class="navigatie-lijst" id="navigatie-lijst">
+        <li><a class="navigatie-link" href="#over">Over</a></li>
+        <li><a class="navigatie-link" href="#playlist">Playlist</a></li>
+        <li><a class="navigatie-link" href="#blog">Blog</a></li>
+        <li><a class="navigatie-link" href="#liedteksten">Liedteksten</a></li>
+        <li><a class="navigatie-link" href="#gallerij">Gallerij</a></li>
+        <li><a class="navigatie-link" href="#winkel">Winkel</a></li>
+        <li><a class="navigatie-link" href="#kalender">Kalender</a></li>
+        <li><a class="navigatie-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="hoofd-inhoud">
+
+  <section id="home" class="hero-sectie" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-inhoud">
+          <div class="hero-titelblok">
+            <h1 class="hero-titel" id="hero-heading">De Narrentiefjes</h1>
+            <p class="hero-tagline">Vrolijke protestliedjes</p>
+          </div>
+          <p class="hero-tekst">De Narrentiefjes zijn Ferenc en Robbert, een exclusief zangduo dat vrolijke protestliedjes zingt over allerhande gezellige rampspoed. Wilt u ook getuigen zijn van onze locale tot globale ellende? Dan zetten wij ook graag bij u onze voet tussen de deur om onze blijde boodschap bij u aan huis te doen. Neem hiertoe gerust contact op via ons contactformulier. Voldoende wc papier is gewenst.</p>
+          <div class="hero-acties">
+            <a class="knop knop-primair" href="#contact">Maak verbinding met ons ❤️</a>
+          </div>
+        </div>
+        <div class="hero-foto-wrapper">
+          <div class="hero-foto">
+            <img class="hero-afbeelding" src="https://placehold.co/1200x1100/c8e6e6/2e6b6b?text=De+Narrentiefjes+live+op+het+podium" alt="De Narrentiefjes live op het podium" width="1200" height="1100">
+            <div class="hero-foto-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="over" class="sectie sectie-alternatief" aria-labelledby="over-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="over-heading">Over ons</h2>
+      </div>
+      <div class="over-tekst">
+        <p class="tekst-paragraaf">Tadaa, daar zijn we dan.</p>
+        <p class="tekst-paragraaf">Wij zijn Ferenc en Robbert en wij geloven in mensen, in vrije keus en de vrije wil.</p>
+        <p class="tekst-paragraaf">Wij geloven dat de mens vooral naar zijn hart mag luisteren en dat het vrije woord een groot goed is ongeacht wat een ander daar van mag vinden.</p>
+        <p class="tekst-paragraaf">Geen blad voor de mond en geen knikker aan de stront.</p>
+        <p class="tekst-paragraaf over-citaat">“Het leven is een feest!” zei ons moeder vroeger, “Je moet alleen zelf de slingers ophangen.”</p>
+        <p class="tekst-paragraaf">Of zoals Monty Python het leed relativeert:</p>
+        <p class="tekst-paragraaf over-citaat">“Cheer up, old bugger. Always look on the bright side of life!”</p>
+        <p class="tekst-paragraaf">Maar. We vertellen je nu ook maar gewoon dat het leven soms ellendig is en de oude wereld moe verzucht.</p>
+        <p class="tekst-paragraaf">En daarom hebben we muziek en humor hard nodig als pleistertje op de wonde daar waar wij mensjes struikelen of dommer als ezels ons een tweede maal aan dezelfde steen stoten.</p>
+        <ul class="over-lijst">
+          <li class="lijst-item">Genoeg oorlog.</li>
+          <li class="lijst-item">Genoeg leugens.</li>
+          <li class="lijst-item">Genoeg manipulatie.</li>
+          <li class="lijst-item">Genoeg angst zaaien.</li>
+        </ul>
+        <p class="tekst-paragraaf">Als we dat te serieus nemen blijft alles bij het oude liedje.</p>
+        <p class="tekst-paragraaf">Er is genoeg “nieuws” om eindeloos grappige liedjes over te maken.</p>
+        <p class="tekst-paragraaf">Tijd voor een nieuwe oogst.</p>
+        <p class="tekst-paragraaf">Laat het leven ons verwonderen, laten we zingen, dansen, proosten, lachen, huilen, liefhebben met hart en ziel, laten we een nieuw verhaal bezingen over de oude wereld met ons duo:</p>
+        <p class="tekst-paragraaf over-naam">De Narrentiefjes!</p>
+        <p class="tekst-paragraaf over-handtekening">Was getekend: Ferenc en Robbert</p>
+      </div>
+      <div class="persoon-grid">
+        <article class="kaart">
+          <div class="kaart-foto">
+            <img class="kaart-afbeelding" src="https://placehold.co/800x800/c8e6e6/2e6b6b?text=Ferenc" alt="Portret van Ferenc" width="800" height="800">
+          </div>
+          <div class="kaart-inhoud">
+            <h3 class="kaart-titel">Ferenc</h3>
+            <p class="kaart-subtitel">Zang en diverse instrumenten</p>
+            <p class="kaart-tekst">Ferenc zingt al 35 jaar zijn eigen wijsjes die hij zelf begeleidt met gitaar, (contra)bas, ukelele, keyboards en diverse percussie instrumenten. <button class="lees-meer" type="button" aria-label="Lees meer over Ferenc">Lees meer</button></p>
+          </div>
+        </article>
+        <article class="kaart">
+          <div class="kaart-foto">
+            <img class="kaart-afbeelding" src="https://placehold.co/800x800/c8e6e6/2e6b6b?text=Robbert" alt="Portret van Robbert" width="800" height="800">
+          </div>
+          <div class="kaart-inhoud">
+            <h3 class="kaart-titel">Robbert</h3>
+            <p class="kaart-subtitel">Zang, akoestische gitaar en ukelele</p>
+            <p class="kaart-tekst">Robbert is een rijk bedeeld man. Als vader van twee prachtkinderen en een geweldige vrouw woonachtig in hartje Nederland - Utrecht. <button class="lees-meer" type="button" aria-label="Lees meer over Robbert">Lees meer</button></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="playlist" class="sectie" aria-labelledby="playlist-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="playlist-heading">Playlist</h2>
+        <p class="sectie-subtitel">Bekijk onze video's op het YouTube-kanaal van De Narrentiefjes</p>
+      </div>
+      <div class="video-grid">
+        <article class="kaart video-kaart">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=rP16-BBCRIg" target="_blank" rel="noopener noreferrer" aria-label="Bekijk video: Zonder boer geen voer">
+            <img class="video-afbeelding" src="https://placehold.co/640x360/2e6b6b/eaf4f4?text=Zonder+boer+geen+voer" alt="Video: Zonder boer geen voer" width="640" height="360">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="video-duur">04:04</span>
+          </a>
+          <div class="kaart-inhoud">
+            <h3 class="video-titel">Zonder boer geen voer</h3>
+          </div>
+        </article>
+        <article class="kaart video-kaart">
+          <a class="video-thumb" href="https://www.youtube.com/@DeNarrentiefjes" target="_blank" rel="noopener noreferrer" aria-label="Bekijk video: Live in Tilburg">
+            <img class="video-afbeelding" src="https://placehold.co/640x360/2e6b6b/eaf4f4?text=Live+in+Tilburg" alt="Video: Live in Tilburg" width="640" height="360">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="video-duur">03:12</span>
+          </a>
+          <div class="kaart-inhoud">
+            <h3 class="video-titel">Live in Tilburg</h3>
+          </div>
+        </article>
+        <article class="kaart video-kaart">
+          <a class="video-thumb" href="https://www.youtube.com/@DeNarrentiefjes" target="_blank" rel="noopener noreferrer" aria-label="Bekijk video: Achter de schermen">
+            <img class="video-afbeelding" src="https://placehold.co/640x360/2e6b6b/eaf4f4?text=Achter+de+schermen" alt="Video: Achter de schermen" width="640" height="360">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="video-duur">05:47</span>
+          </a>
+          <div class="kaart-inhoud">
+            <h3 class="video-titel">Achter de schermen</h3>
+          </div>
+        </article>
+        <article class="kaart video-kaart">
+          <a class="video-thumb" href="https://www.youtube.com/@DeNarrentiefjes" target="_blank" rel="noopener noreferrer" aria-label="Bekijk video: Nieuw protestliedje">
+            <img class="video-afbeelding" src="https://placehold.co/640x360/2e6b6b/eaf4f4?text=Nieuw+protestliedje" alt="Video: Nieuw protestliedje" width="640" height="360">
+            <span class="video-play" aria-hidden="true"></span>
+            <span class="video-duur">02:58</span>
+          </a>
+          <div class="kaart-inhoud">
+            <h3 class="video-titel">Nieuw protestliedje</h3>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="sectie sectie-alternatief" aria-labelledby="blog-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="blog-heading">Blog</h2>
+        <p class="sectie-subtitel">Nieuws en verhalen van de Narrentiefjes</p>
+      </div>
+      <div class="nieuws-grid">
+        <article class="kaart blog-kaart">
+          <p class="blog-meta">Blog #1 — Robbert</p>
+          <h3 class="blog-titel">We hebben er zin an!</h3>
+          <p class="blog-tekst">We hebben er zin an! Waar an? Nou, in oktober komt onze eerste CD uit!</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="liedteksten" class="sectie" aria-labelledby="liedteksten-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="liedteksten-heading">Liedteksten &amp; Verhalen</h2>
+        <p class="sectie-subtitel">Ontdek onze liedteksten en blijf op de hoogte van ons laatste nieuws</p>
+      </div>
+      <div class="lied-lijst">
+        <article class="kaart lied-kaart">
+          <h3 class="lied-titel">Daddy Trump In Davos</h3>
+          <div class="lied-tekst">
+            <p class="tekst-paragraaf">Lady's and gentlemen, welcome to Davos: "Being a happy vassal is one thing, being a miserable slave is something else"</p>
+            <p class="tekst-paragraaf">Yodele he T in Davos Rutte: So what we need to say is: please daddy, here, we'll give it away We'll give you Greenland, please daddy, here, Danmark will understand, we have to do anything you say</p>
+            <p class="tekst-paragraaf">Trump: You did not give me the nobel price, so now I'm done asking really nice We'll make a deal, I'll be your man, I'm gonna make Greenland great again</p>
+            <p class="tekst-paragraaf">Rutte: Oh yes daddy please, protect us from those nasty Russians, can't you see we're on our knees And then we'll say: Yes daddy please, we'll buy your planes, we'll play those games</p>
+            <p class="tekst-paragraaf">Trump: I like it a lot, he's our guy, he's talking a lot, but he doesn't tell a lie Mark's my boy, my beautiful boy and he's got my beautiful NATO toys</p>
+            <p class="tekst-paragraaf">Rutte: Oh thank you daddy, I'm very happy with my new job Trump: Now blow it away, that's it, I like it, beautiful job</p>
+            <p class="tekst-paragraaf">Yodele he T in Davos This land is Greenland, it will be my land The Danes don't understand, they are no use We'll make a great deal, a happy end I'll make an offer they can't refuse Yodele he T in Davos</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallerij" class="sectie sectie-alternatief" aria-labelledby="gallerij-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="gallerij-heading">Gallerij</h2>
+        <p class="sectie-subtitel">Foto's van optredens en kijkjes achter de schermen op Instagram</p>
+      </div>
+      <div class="galerij-grid">
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+1" alt="Foto 1 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+2" alt="Foto 2 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+3" alt="Foto 3 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+4" alt="Foto 4 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+5" alt="Foto 5 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+6" alt="Foto 6 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+7" alt="Foto 7 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+        <a class="galerij-item" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer"><img class="galerij-afbeelding" src="https://placehold.co/600x600/c8e6e6/1a2e2e?text=Foto+8" alt="Foto 8 van De Narrentiefjes" width="600" height="600" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="winkel" class="sectie" aria-labelledby="winkel-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="winkel-heading">Winkel</h2>
+      </div>
+      <div class="winkel-grid">
+        <article class="kaart">
+          <div class="kaart-foto">
+            <img class="kaart-afbeelding" src="https://placehold.co/800x800/2e6b6b/eaf4f4?text=Debuut+CD" alt="Onze debuut CD: De Narrentiefjes" width="800" height="800" loading="lazy">
+          </div>
+          <div class="kaart-inhoud">
+            <h3 class="kaart-titel">Onze debuut CD: De Narrentiefjes</h3>
+            <p class="product-prijs">€ 10,00</p>
+            <p class="product-beschrijving">Binnenkort verkrijgbaar!</p>
+          </div>
+        </article>
+        <article class="kaart">
+          <div class="kaart-foto">
+            <img class="kaart-afbeelding" src="https://placehold.co/800x800/2e6b6b/eaf4f4?text=Band+T-shirt" alt="Band T-shirt van De Narrentiefjes" width="800" height="800" loading="lazy">
+          </div>
+          <div class="kaart-inhoud">
+            <h3 class="kaart-titel">Band T-shirt</h3>
+            <p class="product-prijs">€ 10,00</p>
+            <p class="product-beschrijving">100% biologisch katoenen t-shirt met origineel De Narrentiefjes-artwork. Verkrijgbaar in maten S t/m XXL.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kalender" class="sectie sectie-alternatief" aria-labelledby="kalender-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="kalender-heading">Agenda kalender</h2>
+        <p class="sectie-subtitel">Bekijk al onze evenementen in de kalender</p>
+      </div>
+      <div class="kalender-lijst">
+        <article class="event-kaart">
+          <time class="event-datum" datetime="2026-11-29">
+            <span class="event-maand">nov</span>
+            <span class="event-dag">29</span>
+            <span class="event-weekdag">zo</span>
+          </time>
+          <div class="event-inhoud">
+            <h3 class="event-titel">Verbindingsfestival Eigenwijs Schijndel</h3>
+            <p class="event-tijd">11:00 - 12:15</p>
+            <p class="event-beschrijving">Spectrum Schijndel, Steeg 9, 5482 WN Schijndel. Kaartjes via www.festivaleigenwijs.nl — boek op blok 1 om er bij te zijn.</p>
+          </div>
+        </article>
+        <article class="event-kaart">
+          <time class="event-datum" datetime="2026-12-12">
+            <span class="event-maand">dec</span>
+            <span class="event-dag">12</span>
+            <span class="event-weekdag">za</span>
+          </time>
+          <div class="event-inhoud">
+            <h3 class="event-titel">Oudejaarsconference radio Golfbreker Amersfoort</h3>
+            <p class="event-tijd">06:00 - 07:00 (UTC-5)</p>
+            <p class="event-beschrijving">Gratis entree voor beperkt publiek, opgeven via aanmeldformulier.</p>
+          </div>
+        </article>
+        <article class="event-kaart">
+          <time class="event-datum" datetime="2027-01-31">
+            <span class="event-maand">jan</span>
+            <span class="event-dag">31</span>
+            <span class="event-weekdag">zo</span>
+          </time>
+          <div class="event-inhoud">
+            <h3 class="event-titel">Gluren bij deburen Amersfoort</h3>
+            <p class="event-tijd">05:00 - 11:00 (UTC-5)</p>
+            <p class="event-beschrijving">Informatie volgt via glurenbijdeburen.nl</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sectie sectie-alternatief" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="sectie-kop">
+        <h2 class="sectie-titel" id="contact-heading">Contact</h2>
+      </div>
+      <div class="contactgegevens">
+        <h3 class="contact-subtitel">Boeken / Aanvraag</h3>
+        <div class="form-kaart">
+          <form class="contact-formulier" action="#contact" method="post">
+            <div class="veld">
+              <label class="veld-label" for="contact-name">Naam <span class="verplicht">*</span></label>
+              <input class="veld-input" id="contact-name" name="name" type="text" required>
+            </div>
+            <div class="veld-grid-2">
+              <div class="veld">
+                <label class="veld-label" for="contact-email">E-mail <span class="verplicht">*</span></label>
+                <input class="veld-input" id="contact-email" name="email" type="email" required>
+              </div>
+              <div class="veld">
+                <label class="veld-label" for="contact-phone">Telefoon</label>
+                <input class="veld-input" id="contact-phone" name="phone" type="tel">
+              </div>
+            </div>
+            <div class="veld">
+              <label class="veld-label" for="event-type">Type aanvraag <span class="verplicht">*</span></label>
+              <select class="veld-select" id="event-type" name="eventType" required>
+                <option value="boeking">Boeking</option>
+                <option value="bestellen">Bestellen</option>
+                <option value="overig">Overige vragen</option>
+              </select>
+            </div>
+            <div class="veld">
+              <label class="veld-label" for="contact-message">Bericht <span class="verplicht">*</span></label>
+              <textarea class="veld-textarea" id="contact-message" name="message" rows="6" placeholder="Vertel ons over jouw evenement of vraag..." required></textarea>
+            </div>
+            <button class="knop knop-primair knop-volledig" type="submit">Bericht versturen</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inhoud">
+    <p class="social-tekst">Volg ons op sociale media voor updates en kijkjes achter de schermen</p>
+    <ul class="social-lijst">
+      <li>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61565192272972" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>
+          <span>Facebook</span>
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://www.instagram.com/denarrentiefjes/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c2.7 0 3 0 4.1.06 1.1.05 1.7.23 2.3.49.6.24 1.1.55 1.6 1.05.5.5.8 1 1.05 1.6.26.6.44 1.2.49 2.3.06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1.1-.23 1.7-.49 2.3-.24.6-.55 1.1-1.05 1.6-.5.5-1 .8-1.6 1.05-.6.26-1.2.44-2.3.49-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.7-.23-2.3-.49a4.4 4.4 0 0 1-1.6-1.05 4.4 4.4 0 0 1-1.05-1.6c-.26-.6-.44-1.2-.49-2.3C2 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.23-1.7.49-2.3.24-.6.55-1.1 1.05-1.6.5-.5 1-.8 1.6-1.05.6-.26 1.2-.44 2.3-.49C9 2 9.3 2 12 2zm0 4.6a5.4 5.4 0 1 0 0 10.8 5.4 5.4 0 0 0 0-10.8zm0 8.9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zm6.9-9.1a1.26 1.26 0 1 1-2.52 0 1.26 1.26 0 0 1 2.52 0z"/></svg>
+          <span>Instagram</span>
+        </a>
+      </li>
+      <li>
+        <a class="social-link" href="https://www.youtube.com/@DeNarrentiefjes" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23 12s0-3.3-.42-4.8a2.5 2.5 0 0 0-1.76-1.77C19.3 5 12 5 12 5s-7.3 0-8.82.43A2.5 2.5 0 0 0 1.42 7.2C1 8.7 1 12 1 12s0 3.3.42 4.8a2.5 2.5 0 0 0 1.76 1.77C4.7 19 12 19 12 19s7.3 0 8.82-.43a2.5 2.5 0 0 0 1.76-1.77C23 15.3 23 12 23 12zM9.8 15.3V8.7l6 3.3-6 3.3z"/></svg>
+          <span>YouTube</span>
+        </a>
+      </li>
+    </ul>
+    <p class="copyright">© 2026 De Narrentiefjes. Alle rechten voorbehouden.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var knop = document.querySelector(".navigatie-knop");
+  var lijst = document.querySelector(".navigatie-lijst");
+  if (!knop || !lijst) return;
+  knop.addEventListener("click", function () {
+    var open = lijst.classList.toggle("open");
+    knop.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  lijst.addEventListener("click", function (event) {
+    if (event.target.closest("a")) {
+      lijst.classList.remove("open");
+      knop.setAttribute("aria-expanded", "false");
+    }
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      lijst.classList.remove("open");
+      knop.setAttribute("aria-expanded", "false");
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
